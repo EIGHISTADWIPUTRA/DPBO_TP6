@@ -1,0 +1,20 @@
+import javax.swing.*;
+
+public class App {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Bombardino Crocodilo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(360, 640);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+
+        FlappyBird flappyBird = new FlappyBird();
+        frame.add(flappyBird);
+        frame.pack();
+        flappyBird.requestFocus();
+        frame.setVisible(true);
+
+        Timer timer = new Timer(20, flappyBird); // 50 FPS
+        timer.start();
+    }
+}
